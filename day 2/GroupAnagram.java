@@ -10,9 +10,9 @@ public class GroupAnagram {
         Hashtable<String, ArrayList<String>> tab = new Hashtable<>();
         for(String each:inp){
             char[] value = each.toCharArray();
-            Arrays.sort(value);
+            Arrays.sort(value); // every anagram produces the same sorted value
             String key = new String(value);
-            tab.putIfAbsent(key, new ArrayList<>());
+            tab.putIfAbsent(key, new ArrayList<>()); // if the key is not present, create a new ArrayList
             tab.get(key).add(each);
         }
         System.out.println(tab.values());
